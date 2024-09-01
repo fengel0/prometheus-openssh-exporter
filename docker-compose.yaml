@@ -1,0 +1,12 @@
+services:
+  prometheus-openssh-exporter:
+    image: prometheus-openssh-exporter 
+    container_name: prometheus-openssh-exporter
+    ports:
+      - 8080:8080
+    environment:
+        journal: /host/journal
+        port: 8080
+
+    volumes:
+      - /var/log/journal:/host/journal
